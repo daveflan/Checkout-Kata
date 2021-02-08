@@ -27,7 +27,7 @@ namespace CheckoutKataTests
         public void Items_have_a_discount_based_on_sku_and_quantity()
         {
             var mockSpecialOffers = new Mock<SpecialOffers>();
-            mockSpecialOffers.Setup((x) => x.GetUnitPrice()).Returns(0.5M);
+            mockSpecialOffers.Setup((x) => x.GetSKuPrice()).Returns(0.5M);
 
             Item item = new Item("A99");
             item.ApplySpecialOffers(mockSpecialOffers.Object);

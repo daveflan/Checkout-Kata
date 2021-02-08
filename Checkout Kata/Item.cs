@@ -32,7 +32,7 @@ namespace Checkout_Kata
 
         public decimal GetItemPrice()
         {
-            return _specialOffers.GetUnitPrice();
+            return _specialOffers.GetSKuPrice();
         }
 
        
