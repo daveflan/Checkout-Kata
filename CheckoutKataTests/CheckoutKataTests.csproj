@@ -69,9 +69,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Checkout Kata\Checkout Kata.csproj">
+    <ProjectReference Include="..\Checkout Kata\CheckoutKata.csproj">
       <Project>{db0364b7-be45-4892-9502-abac255bf1ac}</Project>
-      <Name>Checkout Kata</Name>
+      <Name>CheckoutKata</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
