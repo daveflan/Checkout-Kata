@@ -7,16 +7,18 @@
 
     public class OffersPricing : SpecialOffers
     {
-        private decimal _unitPrice;
+        private int _itemCount;
+        private decimal _totalPrice;
 
-        public OffersPricing(decimal unitPrice)
+        public OffersPricing(int itemCount, decimal totalPrice)
         {
-            _unitPrice = unitPrice;
+            _itemCount = itemCount;
+            _totalPrice = totalPrice;
         }
 
         public override decimal GetSKuPrice()
         {
-            return _unitPrice;
+            return _totalPrice / _itemCount;
         }
     }
 

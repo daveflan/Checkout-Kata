@@ -20,7 +20,7 @@ namespace CheckoutKataTests
             Item item = new Item("A99");
             Item item2 = new Item("B15");
 
-            Assert.IsFalse(item.GetItemSKU() == item2.GetItemSKU());
+            Assert.IsFalse(item.GetSKU() == item2.GetSKU());
         }
 
         [TestMethod]
@@ -34,6 +34,39 @@ namespace CheckoutKataTests
 
             decimal price = item.GetItemPrice();
             Assert.AreEqual<decimal>(0.5M, price);
+        }
+
+        [TestMethod]
+        public void Apply_spercial_offers_based_on_item_count_and_SKUPrice()
+        {
+            int itemCount = 3;
+            decimal totalPrice = 1.00M;
+            OffersPricing countBasedPricing = new OffersPricing(itemCount, totalPrice);
+
+            Item item = new Item("A99");
+            item.ApplySpecialOffers(countBasedPricing);
+            decimal itemPrice = item.GetItemPrice();
+
+            decimal expectedPrice = totalPrice / itemCount;
+            Assert.AreEqual(expectedPrice, itemPrice);
+        }
+
+        [TestMethod]
+        public void scanned_items_contain_multiple_items_and_quantities()
+        {
+            var ScanItems = new ScanItems();
+
+            Item tesco = new Item("A99");
+            OffersPricing TestOffer = new OffersPricing(3, 1.35M);
+            tesco.ApplySpecialOffers(TestOffer);
+
+            ItemDetail itemDetail = new ItemDetail(tesco, 3);
+
+            ScanItems.Add(itemDetail);
+
+            decimal totalPrice = ScanItems.GetTotalPrice();
+            Assert.AreEqual(totalPrice, TestOffer.GetSKuPrice() * 3);
+
         }
     }
 }

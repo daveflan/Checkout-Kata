@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Checkout_Kata
 {
-    class ScanItems
+    public class ScanItems
     {
         public ScanItems()
         {

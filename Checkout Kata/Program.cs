@@ -10,6 +10,7 @@ namespace Checkout_Kata
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }

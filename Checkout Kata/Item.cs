@@ -6,24 +6,17 @@ namespace Checkout_Kata
     {
         public Item(string itemSKU)
         {
-            _itemSKU = itemSKU;
-        }
-               
+            _itemSKU = itemSKU;           
+        }               
 
-        string _itemSKU;
-        string _itemNumber;
-        decimal _ItemPrice;
+        string _itemSKU;     
+     
         SpecialOffers _specialOffers;
 
         public string GetSKU()
         {
             return _itemSKU;
-        }
-
-        public string GetItemSKU()
-        {
-            return _itemNumber;
-        }
+        }             
 
         public void ApplySpecialOffers(SpecialOffers specialOffers)
         {
@@ -35,6 +28,5 @@ namespace Checkout_Kata
             return _specialOffers.GetSKuPrice();
         }
 
-       
     }
 }
