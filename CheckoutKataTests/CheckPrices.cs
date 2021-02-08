@@ -37,7 +37,7 @@ namespace CheckoutKataTests
         }
 
         [TestMethod]
-        public void Apply_spercial_offers_based_on_item_count_and_SKUPrice()
+        public void Apply_special_offers_based_on_item_count_and_SKUPrice()
         {
             int itemCount = 3;
             decimal totalPrice = 1.00M;
@@ -52,7 +52,7 @@ namespace CheckoutKataTests
         }
 
         [TestMethod]
-        public void scanned_items_contain_multiple_items_and_quantities()
+        public void Scanned_items_contain_multiple_items_and_quantities()
         {
             var ScanItems = new ScanItems();
 

@@ -9,7 +9,7 @@ namespace Checkout_Kata
             _itemSKU = itemSKU;           
         }               
 
-        string _itemSKU;     
+        string _itemSKU;   
      
         SpecialOffers _specialOffers;
 
